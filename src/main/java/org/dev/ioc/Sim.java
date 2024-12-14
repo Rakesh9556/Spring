@@ -1,4 +1,4 @@
-package org.dev;
+package org.dev.ioc;
 
 public interface Sim {
     void calling();

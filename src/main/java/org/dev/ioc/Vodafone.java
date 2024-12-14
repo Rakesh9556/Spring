@@ -1,9 +1,9 @@
-package org.dev;
+package org.dev.ioc;
 
 public class Vodafone implements Sim {
 
     public Vodafone() {
-        System.out.println("Vodafone sim is used for calling and internet");
+        // System.out.println("Vodafone sim is used for calling and internet");
     }
 
     @Override

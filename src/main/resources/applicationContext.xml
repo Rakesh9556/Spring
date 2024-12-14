@@ -7,7 +7,18 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id = "sim" class = "org.dev.Vodafone"></bean>
+    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>
+
+<!--    studentName dependency will be injected automatically when the object is being created-->
+    <bean id="student1" class = "org.dev.di.Student">
+        <property name="studentName" value="Rakesh Guru" />
+        <property name="age" value="20" />
+    </bean>
+
+    <bean id="student2" class = "org.dev.di.Student">
+        <property name="studentName" value="Rajesh Guru" />
+        <property name="age" value="25" />
+    </bean>
 
 </beans>
 
