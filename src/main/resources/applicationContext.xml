@@ -9,16 +9,17 @@
     <!-- bean definitions here -->
     <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>
 
-<!--    studentName dependency will be injected automatically when the object is being created-->
-    <bean id="student1" class = "org.dev.di.Student">
-        <property name="studentName" value="Rakesh Guru" />
-        <property name="age" value="20" />
+<!--    This is a constructor dependency injection so we need to provide values in constructor instead of property tag-->
+    <bean id = "student" class="org.dev.di.Student">
+        <constructor-arg name = "studentName" value="Rakesh Guru" type="java.lang.String"/>
+        <constructor-arg name = "age" value="18" />
     </bean>
 
-    <bean id="student2" class = "org.dev.di.Student">
-        <property name="studentName" value="Rajesh Guru" />
-        <property name="age" value="25" />
+    <bean id = "student1" class="org.dev.di.Student">
+        <constructor-arg name = "age" value="25" type="int" />
     </bean>
+
+
 
 </beans>
 
