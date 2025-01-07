@@ -20,6 +20,47 @@
     </bean>
 
 
+<!--&lt;!&ndash;    This is an object dependency injection &ndash;&gt;-->
+<!--    <bean id="student2" class="org.dev.di_object_type.Student">-->
+<!--        <property name="mathCheat">-->
+<!--&lt;!&ndash;            for inner bean we don't give id  because it is not required&ndash;&gt;-->
+<!--            <bean class="org.dev.di_object_type.MathCheat" />-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;    There is another way to configure inner bean &ndash;&gt;-->
+<!--    <bean id="newStudent" class="org.dev.di_object_type.NewStudent">-->
+<!--        <property name="mathCheat">-->
+<!--            &lt;!&ndash;            for inner bean we don't give id  because it is not required&ndash;&gt;-->
+<!--            <bean class="org.dev.di_object_type.MathCheat" />-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+<!--    One problem in above is that we are creating two match cheat object for different student, it is not a good approach-->
+<!--    If we have 100 students then as per above approach we need to create 100 math cheat objects which is not good -->
+
+<!--    So we will fix it and try to make one math cheat object which can circulate among n number of students-->
+<!--    For that we first remove the MathCheat bean from the property and explicitly define math cheat object-->
+<!--    And inside the inner property we will add math cheat object reference-->
+
+
+
+    <bean id="mathCheatObj" class="org.dev.di_object_type.MathCheat" />
+
+    <bean id="stud" class="org.dev.di_object_type.Student">
+        <property name="mathCheat" ref="mathCheatObj" />
+    </bean>
+
+    <!--  There is another way to configure inner bean -->
+    <bean id="newStud" class="org.dev.di_object_type.NewStudent">
+        <property name="mathCheat" ref="mathCheatObj" />
+    </bean>
+
+
+
+
+
 
 </beans>
 
