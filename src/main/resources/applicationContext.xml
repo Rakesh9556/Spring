@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>
+<!--    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>-->
 
 <!--    This is a constructor dependency injection so we need to provide values in constructor instead of property tag-->
     <bean id = "student" class="org.dev.di.Student">
@@ -65,9 +65,26 @@
 <!--        <property name="cheat" ref="scienceCheatObj" />-->
 <!--    </bean>-->
 
-    <bean id="mathCheatObj" class="org.dev.loose_coupling.MathCheat" />
-    <bean id="stud" class="org.dev.loose_coupling.Student">
-        <property name="cheat" ref="mathCheatObj" />
+<!--    <bean id="mathCheatObj" class="org.dev.loose_coupling.MathCheat" />-->
+<!--    <bean id="stud" class="org.dev.loose_coupling.Student">-->
+<!--        <property name="cheat" ref="mathCheatObj" />-->
+<!--    </bean>-->
+
+
+
+<!--    Practise-->
+    <bean id="airtel" class="org.dev.practise.Airtel" />
+    <bean id="vodafone" class="org.dev.practise.Vodafone" />
+    <bean id="jio" class="org.dev.practise.Jio" />
+
+    <bean id="calling" class="org.dev.practise.CallingService" />
+    <bean id="data" class="org.dev.practise.DataService" />
+    <bean id="roaming" class="org.dev.practise.RoamingService" />
+    <bean id="callertune" class="org.dev.practise.CallertuneService" />
+
+
+    <bean id="sim" class="org.dev.practise.Jio">
+        <property name="service" ref="calling" />
     </bean>
 
 
