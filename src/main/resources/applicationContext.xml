@@ -46,20 +46,29 @@
 
 
 
-    <bean id="mathCheatObj" class="org.dev.di_object_type.MathCheat" />
+<!--    <bean id="mathCheatObj" class="org.dev.di_object_type.MathCheat" />-->
 
-    <bean id="stud" class="org.dev.di_object_type.Student">
-        <property name="mathCheat" ref="mathCheatObj" />
+<!--    <bean id="stud" class="org.dev.di_object_type.Student">-->
+<!--        <property name="mathCheat" ref="mathCheatObj" />-->
+<!--    </bean>-->
+
+<!--    <bean id="newStud" class="org.dev.di_object_type.NewStudent">-->
+<!--        <property name="mathCheat" ref="mathCheatObj" />-->
+<!--    </bean>-->
+
+
+
+<!--    Loose coupling -->
+
+<!--    <bean id="scienceCheatObj" class="org.dev.loose_coupling.ScienceCheat" />-->
+<!--    <bean id="stud" class="org.dev.loose_coupling.Student">-->
+<!--        <property name="cheat" ref="scienceCheatObj" />-->
+<!--    </bean>-->
+
+    <bean id="mathCheatObj" class="org.dev.loose_coupling.MathCheat" />
+    <bean id="stud" class="org.dev.loose_coupling.Student">
+        <property name="cheat" ref="mathCheatObj" />
     </bean>
-
-    <!--  There is another way to configure inner bean -->
-    <bean id="newStud" class="org.dev.di_object_type.NewStudent">
-        <property name="mathCheat" ref="mathCheatObj" />
-    </bean>
-
-
-
-
 
 
 </beans>
