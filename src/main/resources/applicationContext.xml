@@ -3,8 +3,8 @@
 <!--Validate the tags and manage the schema location of these tags-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- bean definitions here -->
 <!--    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>-->
@@ -73,18 +73,39 @@
 
 
 <!--    Practise-->
-    <bean id="airtel" class="org.dev.practise.Airtel" />
-    <bean id="vodafone" class="org.dev.practise.Vodafone" />
-    <bean id="jio" class="org.dev.practise.Jio" />
+<!--    <bean id="airtel" class="org.dev.practise.Airtel" />-->
+<!--    <bean id="vodafone" class="org.dev.practise.Vodafone" />-->
+<!--    <bean id="jio" class="org.dev.practise.Jio" />-->
 
-    <bean id="calling" class="org.dev.practise.CallingService" />
-    <bean id="data" class="org.dev.practise.DataService" />
-    <bean id="roaming" class="org.dev.practise.RoamingService" />
-    <bean id="callertune" class="org.dev.practise.CallertuneService" />
+<!--    <bean id="calling" class="org.dev.practise.CallingService" />-->
+<!--    <bean id="data" class="org.dev.practise.DataService" />-->
+<!--    <bean id="roaming" class="org.dev.practise.RoamingService" />-->
+<!--    <bean id="callertune" class="org.dev.practise.CallertuneService" />-->
 
 
-    <bean id="sim" class="org.dev.practise.Jio">
-        <property name="service" ref="calling" />
+<!--    <bean id="sim" class="org.dev.practise.Jio">-->
+<!--        <property name="service" ref="calling" />-->
+<!--    </bean>-->
+
+
+<!--    Autowired-->
+<!--    <context:component-scan base-package="org.dev.autowired" />-->
+    <context:annotation-config />
+
+    <bean id="humanHeart" class="org.dev.autowired.Heart"> 
+        <property name="animalName" value="Human" />
+        <property name="age" value="21" />
+    </bean>
+
+    <bean id="animalHeart" class="org.dev.autowired.Heart">
+        <property name="animalName" value="Wolf" />
+        <property name="age" value="3" />
+    </bean>
+<!--    Instead of using autowire here we can also inject dependencies using @Autowired annotation-->
+<!--    <bean id="body" class="org.dev.autowired.Body" autowire="constructor">-->
+    <bean id="body" class="org.dev.autowired.Body">
+    <!--        This property will be automatically injected with the help of Autowiring-->
+<!--        <property name="heart" ref="heart" />-->
     </bean>
 
 
