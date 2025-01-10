@@ -10,14 +10,14 @@
 <!--    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>-->
 
 <!--    This is a constructor dependency injection so we need to provide values in constructor instead of property tag-->
-    <bean id = "student" class="org.dev.di.Student">
-        <constructor-arg name = "studentName" value="Rakesh Guru" type="java.lang.String"/>
-        <constructor-arg name = "age" value="18" />
-    </bean>
+<!--    <bean id = "student" class="org.dev.di.Student">-->
+<!--        <constructor-arg name = "studentName" value="Rakesh Guru" type="java.lang.String"/>-->
+<!--        <constructor-arg name = "age" value="18" />-->
+<!--    </bean>-->
 
-    <bean id = "student1" class="org.dev.di.Student">
-        <constructor-arg name = "age" value="25" type="int" />
-    </bean>
+<!--    <bean id = "student1" class="org.dev.di.Student">-->
+<!--        <constructor-arg name = "age" value="25" type="int" />-->
+<!--    </bean>-->
 
 
 <!--&lt;!&ndash;    This is an object dependency injection &ndash;&gt;-->
@@ -90,24 +90,39 @@
 
 <!--    Autowired-->
 <!--    <context:component-scan base-package="org.dev.autowired" />-->
+<!--    <context:annotation-config />-->
+
+<!--    <bean id="humanHeart" class="org.dev.autowired.Heart"> -->
+<!--        <property name="animalName" value="Human" />-->
+<!--        <property name="age" value="21" />-->
+<!--    </bean>-->
+
+<!--    <bean id="animalHeart" class="org.dev.autowired.Heart">-->
+<!--        <property name="animalName" value="Wolf" />-->
+<!--        <property name="age" value="3" />-->
+<!--    </bean>-->
+<!--&lt;!&ndash;    Instead of using autowire here we can also inject dependencies using @Autowired annotation&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="body" class="org.dev.autowired.Body" autowire="constructor">&ndash;&gt;-->
+<!--    <bean id="body" class="org.dev.autowired.Body">-->
+<!--    &lt;!&ndash;        This property will be automatically injected with the help of Autowiring&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="heart" ref="heart" />&ndash;&gt;-->
+<!--    </bean>-->
+
+
+
+
+<!--    Loading from properties files-->
+    <context:property-placeholder location="student-info.properties" />
     <context:annotation-config />
 
-    <bean id="humanHeart" class="org.dev.autowired.Heart"> 
-        <property name="animalName" value="Human" />
-        <property name="age" value="21" />
-    </bean>
+    <bean id="student" class="org.dev.loadingfrompropertiesfile.Student">
+<!--        we will dynamicaly set these properties values load from a property file-->
+<!--        <property name="name" value="${student.name}" />-->
+<!--        <property name="interestedCourse" value="${student.interestedCourse}" />-->
+<!--        <property name="hobby" value="${student.hobby}" />-->
+<!--        we can do the above using @Value annotation-->
 
-    <bean id="animalHeart" class="org.dev.autowired.Heart">
-        <property name="animalName" value="Wolf" />
-        <property name="age" value="3" />
     </bean>
-<!--    Instead of using autowire here we can also inject dependencies using @Autowired annotation-->
-<!--    <bean id="body" class="org.dev.autowired.Body" autowire="constructor">-->
-    <bean id="body" class="org.dev.autowired.Body">
-    <!--        This property will be automatically injected with the help of Autowiring-->
-<!--        <property name="heart" ref="heart" />-->
-    </bean>
-
 
 </beans>
 
