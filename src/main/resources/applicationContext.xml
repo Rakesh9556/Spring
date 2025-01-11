@@ -125,13 +125,18 @@
 <!--    </bean>-->
 
 <!--    Loading from properties files practise -->
-    <context:annotation-config />
-    <context:property-placeholder location="database-connection-config.properties" />
+<!--    <context:annotation-config />-->
+<!--    <context:property-placeholder location="database-connection-config.properties" />-->
 
-    <bean id="mySql" class="org.dev.practisepropertyloading.MySQL" />
-    <bean id="dbConnect" class="org.dev.practisepropertyloading.DbConnection" />
+<!--    <bean id="mySql" class="org.dev.practisepropertyloading.MySQL" />-->
+<!--    <bean id="dbConnect" class="org.dev.practisepropertyloading.DbConnection" />-->
 
 
+
+<!--    Spring common annotation-->
+
+<!--    Instead of configuring bean here we can also configure the bean inside the java class (java-based configuration)-->
+<!--    <bean id="college" class="org.dev.spring_common_annotation.College" />-->
 
 
 </beans>
