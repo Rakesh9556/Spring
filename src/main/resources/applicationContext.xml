@@ -7,7 +7,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- bean definitions here -->
-<!--    <bean id = "sim" class = "org.dev.ioc.Vodafone"></bean>-->
+<!--    <bean id = "sim" class = "org.dev._01_ioc.Vodafone"></bean>-->
 
 <!--    This is a constructor dependency injection so we need to provide values in constructor instead of property tag-->
 <!--    <bean id = "student" class="org.dev.di.Student">-->
@@ -137,6 +137,9 @@
 
 <!--    Instead of configuring bean here we can also configure the bean inside the java class (java-based configuration)-->
 <!--    <bean id="college" class="org.dev.spring_common_annotation.College" />-->
+
+<!--    <context:component-scan base-package="org.dev.spring_common_annotation" />-->
+<!--    we can also do the package scanning in java side so we can complete delete the xml file (to avoid xml based config) -->
 
 
 </beans>
